@@ -1,0 +1,14 @@
+{% if error %}
+{{error}}
+{% endif %}
+<form method="POST" action="{% url 'update' update.id %}" enctype="multipart/form-data">
+{% csrf_token %}
+Image:
+<br/>
+<input type ="file" name="image" />
+<br/>
+Summary:
+<input type="text" name ="summary" />
+<br/>
+<input type="submit" name="update" />
+</form>
